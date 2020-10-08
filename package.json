@@ -1,0 +1,26 @@
+{
+  "name": "learn-sequelize",
+  "version": "0.0.1",
+  "description": "Examples to learn and how to use Sequelize.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HardyScheel/sequelize-test.git"
+  },
+  "keywords": [
+    "Sequelize"
+  ],
+  "author": "Hardy Scheel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HardyScheel/sequelize-test/issues"
+  },
+  "homepage": "https://github.com/HardyScheel/sequelize-test#readme",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
