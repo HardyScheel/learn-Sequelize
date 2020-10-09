@@ -44,11 +44,10 @@ async function dbConnectTest () {
   } catch (error) {
     console.error('Unable to connect to the database:', error)
   }
-
-  sequelize.close()
 }
 
 dbConnectTest()
 
 // Closing the connection
 // Sequelize will keep the connection open by default, and use the same connection for all queries. If you need to close the connection, call sequelize.close() (which is asynchronous and returns a Promise).
+// sequelize.close()

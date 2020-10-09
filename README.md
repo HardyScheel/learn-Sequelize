@@ -11,6 +11,7 @@ To test around with Sequelize I mainly use:
 * MySQL 8 (Community Edition) as SQL server
 * JavaScript ES6 / ES2015
 * Object oriented concept
+* [Sequelize UI app](https://sequelizeui.app/)
 
 ## How to get started?
 
@@ -22,6 +23,8 @@ All other folders contain snippets and mini-projects where I try out the possibi
 
 * [Official Sequelize manual](https://sequelize.org/master/manual/getting-started.html)
 * [[sequelize.js] at Stack Overflow](https://stackoverflow.com/questions/tagged/sequelize.js)
+* [Sequelize UI by Tom Schuster](https://sequelizeui.app/)
+* [What is Object-Relational Mapping?](https://jarednielsen.com/object-relational-mapping-javascript-orm/)
 
 # License
 
