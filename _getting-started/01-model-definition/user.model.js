@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
-const sequelize = new Sequelize('mysql://sequelize-test-user:sequelize-test-user-password@localhost:3306/sequelize-test', {
+const sequelize = new Sequelize('mysql://learn-sequelize-user:learn-sequelize-user-password@localhost:3306/learn-sequelize', {
   logging: (...msg) => console.log(msg) // Displays all log function call parameters
 })
 

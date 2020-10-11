@@ -1,0 +1,238 @@
+openapi: 3.0.0
+info:
+  title: sequelize-ui-test
+  description: Node.js + MySQL API
+  version: 0.0.1
+
+servers:
+  - url: http://localhost:4000
+    description: Local development server
+
+paths:
+  /users:
+    get:
+      summary: Get a list of all users
+      operationId: getAllUsers
+      responses:
+        "200":
+          description: An array of all users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: "34"
+                    customerId:
+                      type: string
+                      example: "A30-49870001"
+                    firstName:
+                      type: string
+                      example: "Hardy"
+                    lastName:
+                      type: string
+                      example: "Scheel"
+                    created:
+                      type: string
+                      example: "2020-05-05T09:12:57.848Z"
+                    updated:
+                      type: string
+                      example: "2020-05-08T03:11:21.553Z"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    post:
+      summary: Create a new user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  example: "A30-49870001"
+                firstName:
+                  type: string
+                  example: "Hardy"
+                lastName:
+                  type: string
+                  example: "Scheel"
+              required:
+                - customerID
+                - firstName
+                - lastName
+      responses:
+        "200":
+          description: User created successfully. The details of the new account are returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: "45"
+                  customerId:
+                    type: string
+                    example: "A30-49870001"
+                  firstName:
+                    type: string
+                    example: "Hardy"
+                  lastName:
+                    type: string
+                    example: "Scheel"
+                  created:
+                    type: string
+                    example: "2020-05-05T09:12:57.848Z"
+        "400":
+          description: User with customerID is already registered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User with customerID 'A30-49870001' is already registered"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+  /users/{id}:
+    parameters:
+      - in: path
+        name: id
+        description: User id
+        required: true
+        example: "23"
+        schema:
+          type: string
+    get:
+      summary: Get a single user by id
+      operationId: getUserById
+      responses:
+        "200":
+          description: Details of the specified user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: "43"
+                  customerId:
+                    type: string
+                    example: "A30-49870001"
+                  firstName:
+                    type: string
+                    example: "Hardy"
+                  lastName:
+                    type: string
+                    example: "Scheel"
+                  username:
+                    type: string
+                    example: "hscheel"
+                  created:
+                    type: string
+                    example: "2020-05-05T09:12:57.848Z"
+                  updated:
+                    type: string
+                    example: "2020-05-08T03:11:21.553Z"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    put:
+      summary: Update an user
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  example: "A30-49870001"
+                firstName:
+                  type: string
+                  example: "Hardy"
+                lastName:
+                  type: string
+                  example: "Scheel"
+      responses:
+        "200":
+          description: User updated successfully. The details of the updated user are returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: "23"
+                  customerId:
+                    type: string
+                    example: "A30-49870001"
+                  firstName:
+                    type: string
+                    example: "Hardy"
+                  lastName:
+                    type: string
+                    example: "Scheel"
+                  created:
+                    type: string
+                    example: "2020-05-05T09:12:57.848Z"
+                  updated:
+                    type: string
+                    example: "2020-05-08T03:11:21.553Z"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    delete:
+      summary: Delete an user
+      description: Delete a single user
+      operationId: deleteUser
+      responses:
+        "200":
+          description: User deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User deleted successfully"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+components:
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid, or the user does not have access to perform the action
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Unauthorized"
+    NotFoundError:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Not Found"
