@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: sequelize-ui-test
-  description: Node.js + MySQL API
+  title: user-component-openapi
+  description: A user component with a OpenAPI REST API for Node.js + MySQL back-end.
   version: 0.0.1
 
 servers:
