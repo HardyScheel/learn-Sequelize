@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HardyScheel/sequelize-test.git"
+    "url": "git+https://github.com/HardyScheel/learn-Sequelize.git"
   },
   "keywords": [
     "Sequelize"
@@ -16,9 +16,9 @@
   "author": "Hardy Scheel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HardyScheel/sequelize-test/issues"
+    "url": "https://github.com/HardyScheel/learn-Sequelize/issues"
   },
-  "homepage": "https://github.com/HardyScheel/sequelize-test#readme",
+  "homepage": "https://github.com/HardyScheel/learn-Sequelize#readme",
   "dependencies": {
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"

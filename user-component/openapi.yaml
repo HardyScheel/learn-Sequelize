@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: user-component-openapi
   description: A user component with a OpenAPI REST API for Node.js + MySQL back-end.
-  version: 0.0.1
+  version: 1.0.0
 
 servers:
   - url: http://localhost:4000
@@ -26,7 +26,7 @@ paths:
                     id:
                       type: string
                       example: "34"
-                    customerId:
+                    userId:
                       type: string
                       example: "A30-49870001"
                     firstName:
@@ -53,7 +53,7 @@ paths:
             schema:
               type: object
               properties:
-                customerId:
+                userId:
                   type: string
                   example: "A30-49870001"
                 firstName:
@@ -63,7 +63,7 @@ paths:
                   type: string
                   example: "Scheel"
               required:
-                - customerID
+                - userId
                 - firstName
                 - lastName
       responses:
@@ -76,8 +76,8 @@ paths:
                 properties:
                   id:
                     type: string
-                    example: "45"
-                  customerId:
+                    example: "1"
+                  userId:
                     type: string
                     example: "A30-49870001"
                   firstName:
@@ -90,7 +90,7 @@ paths:
                     type: string
                     example: "2020-05-05T09:12:57.848Z"
         "400":
-          description: User with customerID is already registered
+          description: User with userId is already registered
           content:
             application/json:
               schema:
@@ -98,7 +98,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: "User with customerID 'A30-49870001' is already registered"
+                    example: "User with userId 'A30-49870001' is already registered"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
   /users/{id}:
@@ -124,7 +124,7 @@ paths:
                   id:
                     type: string
                     example: "43"
-                  customerId:
+                  userId:
                     type: string
                     example: "A30-49870001"
                   firstName:
@@ -156,7 +156,7 @@ paths:
             schema:
               type: object
               properties:
-                customerId:
+                userId:
                   type: string
                   example: "A30-49870001"
                 firstName:
@@ -175,8 +175,8 @@ paths:
                 properties:
                   id:
                     type: string
-                    example: "23"
-                  customerId:
+                    example: "1"
+                  userId:
                     type: string
                     example: "A30-49870001"
                   firstName:

@@ -56,6 +56,6 @@ async function getUser(id) {
 }
 
 function basicDetails(user) {
-  const { id, customerId, firstName, lastName, created, updated } = user;
-  return { id, customerId, firstName, lastName, created, updated };
+  const { id, userId, firstName, lastName, created, updated } = user;
+  return { id, userId, firstName, lastName, created, updated };
 }

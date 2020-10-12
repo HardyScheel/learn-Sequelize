@@ -1,10 +1,12 @@
 {
-  "name": "sequelize-ui-test",
-  "version": "0.0.1",
-  "description": "Node.js + MySQL API",
+  "name": "user-component-openapi",
+  "version": "1.0.0",
+  "description": "A user component with a OpenAPI REST API for Node.js + MySQL back-end.",
   "author": "Hardy Scheel",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "OpenAPI"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/HardyScheel/"

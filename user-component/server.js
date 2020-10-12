@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 // allow cors requests from any origin and with credentials
 app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: true }));
 
-// api routes
+// OpenAPI 3.0 routes
 app.use('/users', require('./users/user.controller'));
 
 // swagger docs route

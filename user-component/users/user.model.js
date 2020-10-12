@@ -4,7 +4,7 @@ module.exports = model
 
 function model(sequelize) {
   const attributes = {
-    customerId: { type: DataTypes.STRING, allowNull: false },
+    userId: { type: DataTypes.STRING, allowNull: false },
     firstName: { type: DataTypes.STRING, allowNull: false },
     lastName: { type: DataTypes.STRING, allowNull: false },
     created: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW },
